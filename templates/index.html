@@ -42,7 +42,8 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Age</h5>                           
+                            <h5 class="card-title">Age</h5>
+                            <input type="number" name="age" placeholder="Age" id="age" class="name-inp" min="1" max="100" style="width:150px;">                           
                         </div>
                     </div>
                 </div>
@@ -52,7 +53,8 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">TSH</h5>
+                            <h5 class="card-title">Thyroid Stimulating Hormone Level</h5>
+                            <input type="number" name="Thyroid Stimulating Hormone" placeholder="TSH" id="tsh" class="name-inp" min="1" max="100" style="width:150px;">
                             </div>
                     </div>
                 </div>
@@ -67,10 +69,10 @@
                     <div class="card">
                         <div class="card-body">
                             <!-- Source -->
-                            <h5 class="card-title">Pregnant</h5> 
+                            <h5 class="card-title">Pregnant (Yes or No)</h5> 
                             <select name="Source" id="Source" required="required">
-                                <option value="Yes">1</option>
-                                <option value="No">0</option>
+                                <option value="Yes">True-1</option>
+                                <option value="No">False-0</option>
                             </select>
                         </div>
                     </div>
@@ -78,11 +80,9 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">T3</h5>
-                            <!-- Destination -->
-                            <select name="Destination" id="Destination" required="required">
-                                <option value="C">C</option>
-                            </select>
+                            <h5 class="card-title">Triiodothyronine(T3)</h5>
+                            <!--T3  -->
+                            <input type="number" name="T3" placeholder="T3 Value" id="tsh" class="name-inp" min="1" max="100" style="width:150px;">
                         </div>
                     </div>
                 </div>
@@ -98,24 +98,21 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">T4</h5>
-                            <!-- Total Stops -->
-                            <select name="stops" required="required">
-                                <option value="0">No</option>
-                                <option value="1">1</option>
+                            <h5 class="card-title">Total Thyroxine (TT4)</h5>
+                            <!-- TT4 -->
+                            <input type="number" name="TT4" placeholder="TT4 Value" id="tsh" class="name-inp" min="1" max="100" style="width:150px;">
 
-                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">on_thyroxine</h5>
+                            <h5 class="card-title">On thyroxine Medication?</h5>
                             <!-- on_thyroxine -->
                             <select name="Source" id="Source" required="required">
-                                <option value="Yes">1</option>
-                                <option value="No">0</option>
+                                <option value="Yes">True-1</option>
+                                <option value="No">False-0</option>
                             </select>
                         </div>
                     </div>
@@ -128,7 +125,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Age</h5>                           
+                            <h5 class="card-title">T4U</h5>                           
                         </div>
                     </div>
                 </div>
@@ -138,7 +135,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">TSH</h5>
+                            <h5 class="card-title"></h5>
                             </div>
                     </div>
                 </div>
@@ -152,7 +149,11 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Tumor</h5>                           
+                            <h5 class="card-title">Tumor</h5> 
+                            <select name="Source" id="Source" required="required">
+                                <option value="Yes">1</option>
+                                <option value="No">0</option>
+                            </select>                          
                         </div>
                     </div>
                 </div>
@@ -162,7 +163,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">FTI</h5>
+                            <h5 class="card-title">Free Thyroxine Index(FTI)</h5>
                             </div>
                     </div>
                 </div>
