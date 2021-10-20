@@ -10,23 +10,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-
-    <!-- css -->
-    <link rel="stylesheet" href="static/css/styles.css">
-
-
 </head>
 
 <body>
+    <div style="background-color:#D3D3D3	;color:white;padding:20px;">
 
-    <!-- As a heading -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">THYROID DETECTION</a>
-            </div>
-        </div>
-    </nav>
+    <Center> <h1 style="color:rgb(27, 27, 27)">Thyroid Disease Detection</h1> <br></center> 
+
+
 
     <br><br><br>
 
@@ -42,7 +33,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Age</h5>
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">Age</h5>
                             <input type="number" name="age" placeholder="Age" id="age" class="name-inp" min="1" max="100" style="width:150px;">                           
                         </div>
                     </div>
@@ -53,7 +44,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Thyroid Stimulating Hormone Level</h5>
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">Thyroid Stimulating Hormone Level</h5>
                             <input type="number" name="Thyroid Stimulating Hormone" placeholder="TSH" id="tsh" class="name-inp" min="1" max="100" style="width:150px;">
                             </div>
                     </div>
@@ -69,7 +60,7 @@
                     <div class="card">
                         <div class="card-body">
                             <!-- Source -->
-                            <h5 class="card-title">Pregnant (Yes or No)</h5> 
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">Pregnant (Yes or No)</h5> 
                             <select name="Source" id="Source" required="required">
                                 <option value="Yes">True-1</option>
                                 <option value="No">False-0</option>
@@ -80,16 +71,13 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Triiodothyronine(T3)</h5>
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">Triiodothyronine(T3)</h5>
                             <!--T3  -->
                             <input type="number" name="T3" placeholder="T3 Value" id="tsh" class="name-inp" min="1" max="100" style="width:150px;">
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
             <br>
             <br>
             <br>
@@ -98,7 +86,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Total Thyroxine (TT4)</h5>
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">Total Thyroxine (TT4)</h5>
                             <!-- TT4 -->
                             <input type="number" name="TT4" placeholder="TT4 Value" id="tsh" class="name-inp" min="1" max="100" style="width:150px;">
 
@@ -108,7 +96,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">On thyroxine Medication?</h5>
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">On thyroxine Medication?</h5>
                             <!-- on_thyroxine -->
                             <select name="Source" id="Source" required="required">
                                 <option value="Yes">True-1</option>
@@ -125,7 +113,9 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">T4U</h5>                           
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">T4U Measure</h5> 
+                            <input type="number" name="T4U" placeholder="T4U Value" id="tsh" class="name-inp" min="1" max="100" style="width:150px;">
+                         
                         </div>
                     </div>
                 </div>
@@ -135,7 +125,11 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"></h5>
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">FTI Measured (Yes or No)</h5>
+                            <select name="Source" id="Source" required="required">
+                                <option value="Yes">1</option>
+                                <option value="No">0</option>
+                            </select>                          
                             </div>
                     </div>
                 </div>
@@ -149,7 +143,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Tumor</h5> 
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">Tumor</h5> 
                             <select name="Source" id="Source" required="required">
                                 <option value="Yes">1</option>
                                 <option value="No">0</option>
@@ -163,7 +157,8 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Free Thyroxine Index(FTI)</h5>
+                            <h5 class="card-title" style="color:rgb(27, 27, 27)">Free Thyroxine Index(FTI)</h5>
+                            <input type="number" name="FTI" placeholder="FTI Value" id="tsh" class="name-inp" min="1" max="100" style="width:150px;">
                             </div>
                     </div>
                 </div>
@@ -172,10 +167,6 @@
             <br>
             <br>
             <br>
-
-
-
-
             <br>
             <br>
             <br>
