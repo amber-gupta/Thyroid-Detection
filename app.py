@@ -6,48 +6,49 @@ from pymongo import MongoClient
 from flask_pymongo import PyMongo
 
 
-model = joblib.load('Thyroid_model.pkl')
+#model = joblib.load('Thyroid_model.pkl')
 
 app=Flask(__name__)
 
-app.config['MONGO_DBNAME']='mydb'
-app.config["MONGO_URI"]='mongodb+srv://kalpuG:12345@mydb.ydqwp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+#app.config['MONGO_DBNAME']='mydb'
+#app.config["MONGO_URI"]='mongodb+srv://kalpuG:12345@mydb.ydqwp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 mongo=PyMongo(app)
 
 @app.route('/')
+def index():
+    return render_template("index.html")
 
-def home():
-    online_uses=mongo.db.users.find({"online":True})
-    return render_template('index.html',online_uses=online_uses)
+# def home():
+#     online_uses=mongo.db.users.find({"online":True})
+#     return render_template('index.html',online_uses=online_uses)
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['POST','GET'])
 
 def predict():
-    db = mongo.db.Results_app
+    #db = mongo.db.Results_app
+ 
+    Age=float(request.form['age'])
+    Thyroid_Stimulating_Hormone_Level= float(request.form.get['TSH'])
+    Pregnant=float(request.form['pregnant'])
+    Triiodothyronine_T3=float(request.form['T3'])
+    Total_Thyroxine_TT4=float(request.form['TT4'])
+    On_thyroxine_Medication=float(request.form['on_thyroxine'])
+    T4U_Measure=float(request.form['T4U'])
+    FTI_Measured=float(request.form['FTI_measured'])
+    Tumor= float(request.form['tumor'])
+    Free_Thyroxine_Index_FTI= float(request.form['FTI'])
 
-    Age=float(request.form.get('age',False))
-    Sex= float(request.form.get('sex',False))
-    Level_thyroid_stimulating_hormone= float(request.form.get('TSH',False))
-    Total_thyroxine_TT4= float(request.form.get('TT4',False))
-    Free_thyroxine_index=float(request.form.get('FTI',False))
-    On_thyroxine= float(request.form.get('on_thyroxine',False))
-    On_antithyroid_medication= float(request.form.get('on_antithyroid_medication',False))
-    Goitre= float(request.form.get('goitre',False))
-    Hypopituitary = float(request.form.get('hypopituitary', False))
-    Psychological_symptoms = float(request.form.get('psych', False))
-    T3_measured= float(request.form.get('T3_measured',False))
-
-    values=({"age":Age,"sex":Sex,"TSH":Level_thyroid_stimulating_hormone,
-            "FTI":Free_thyroxine_index,"on_thyroxine":On_thyroxine,
-            "on_antithyroid_medication":On_antithyroid_medication,
-            "goitre":Goitre,"hypopituitary":Hypopituitary,
-            "psych":Psychological_symptoms,"T3_measured":T3_measured})
+    values=({"age":Age,"TSH":Thyroid_Stimulating_Hormone_Level,"preganant":Pregnant
+             "T3":Triiodothyronine_T3,"TT4":Total_Thyroxine_TT4,
+            "on_thyroxine":On_thyroxine_Medication,"T4U":T4U Measure,FTI_measured":FTI_Measured,
+            "tumor":Tumor,"FTI":Free_Thyroxine_Index_FTI})
     my_data=db.insert_one(values)
 
-    arr=np.array([[Age,Sex,Level_thyroid_stimulating_hormone,Total_thyroxine_TT4,Free_thyroxine_index,
-    On_thyroxine,On_antithyroid_medication,Goitre,Hypopituitary,Psychological_symptoms,T3_measured]])
+    arr=np.array([[Age,Thyroid_Stimulating_Hormone_Level,Pregnant,Triiodothyronine_T3,Total_Thyroxine_TT4,
+    On_thyroxine_Medication,T4U_Measure,FTI_Measured,Tumor,Free_Thyroxine_Index_FTI ]])
     pred=model.predict(arr)
+
 
 
     if pred==0:
